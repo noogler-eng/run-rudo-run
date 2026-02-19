@@ -232,6 +232,8 @@ public class OperatorsAndConditionals {
         Object obj = text;
         
         System.out.println("text instanceof String: " + (text instanceof String));
+        // it will return true, as Even though you labeled the variable as an Object, the actual object 
+        // inside that memory "bucket" is still a String.
         System.out.println("obj instanceof String: " + (obj instanceof String));
         System.out.println("obj instanceof Object: " + (obj instanceof Object));
         
