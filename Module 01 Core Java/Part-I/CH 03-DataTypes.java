@@ -5,6 +5,7 @@
 /*
  * Java has two categories of data types:
  * 
+   // basic building block for the java ....
  * 1. Primitive Data Types (8 types):
  *    - boolean: true/false (1 bit)
  *    - byte: -128 to 127 (8 bits)
@@ -15,6 +16,7 @@
  *    - double: Double precision floating point (64 bits)
  *    - char: Single Unicode character (16 bits)
  * 
+ // blocks which are formed of the basic blocks .... 
  * 2. Non-Primitive (Reference) Data Types:
  *    - String, Arrays, Classes, Interfaces
  *    - These store references to memory locations
@@ -109,6 +111,7 @@ public class DataTypes {
         
         // Explicit casting (narrowing)
         double doubleValue = 9.78;
+        // when we have to explicityly typecast then user the (int), (float) .... 
         int intFromDouble = (int) doubleValue; // Explicit cast (loses decimal)
         float floatValue = 10.5f;
         byte byteFromFloat = (byte) floatValue; // Explicit cast
@@ -122,6 +125,7 @@ public class DataTypes {
         System.out.println("\n6. Non-Primitive Data Types:");
         
         // String
+        // memeory used here is Heap .... 
         String greeting = "Hello, World!";
         String name = new String("Java");
         System.out.println("String greeting: " + greeting);
@@ -152,6 +156,7 @@ public class DataTypes {
         System.out.println("\n8. Overflow and Underflow:");
         
         // Integer overflow
+        // here tis Integer is wrapper over the int which provide more functionalityes.....
         int maxInt = Integer.MAX_VALUE;
         System.out.println("Max int: " + maxInt);
         System.out.println("Max int + 1: " + (maxInt + 1)); // Wraps to minimum
@@ -170,6 +175,9 @@ public class DataTypes {
         
         System.out.println("Positive infinity: " + positiveInfinity);
         System.out.println("Negative infinity: " + negativeInfinity);
+
+        // Double - wrapper ....
+        // this is not a number - Double.NaN
         System.out.println("Not a Number: " + notANumber);
         
         // Creating these values
@@ -206,6 +214,8 @@ class DefaultValuesDemo {
         System.out.println("Default String: " + defaultString);
     }
 }
+
+// pritmites types store the values, while non-primitive references
 
 /*
  * Key Points about Java Data Types:
