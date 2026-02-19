@@ -23,6 +23,11 @@
 public class ReservedWords {
     
     // Class-level variables demonstrating access modifiers
+    // defining the String publicVar
+    // public static final String MY_NAME = "anything";
+
+    public static int statticConter = 0;
+    
     public String publicVar = "Accessible everywhere";
     private String privateVar = "Only within this class";
     protected String protectedVar = "Within package and subclasses";
@@ -36,6 +41,7 @@ public class ReservedWords {
         
         ReservedWords obj = new ReservedWords();
         System.out.println("Public variable: " + obj.publicVar);
+        // we are making an object then we are accessing it that's why it gives compilation error
         // System.out.println(obj.privateVar); // This would cause compilation error
         System.out.println("Protected variable: " + obj.protectedVar);
         System.out.println("Static constant: " + CONSTANT);
@@ -72,6 +78,21 @@ public class ReservedWords {
         }
         
         // switch-case-default
+        // charVar which is switch case
+        switch(charVar){
+            case 'A': 
+                System.out.println("hwllo hi!!!!")
+                break;
+            case 'B':
+                System.out.println("hello second!!!");
+                break;
+            ....
+            default:
+                System.out.println("anything");
+                break;
+        }
+
+        
         switch (charVar) {
             case 'A':
                 System.out.println("Character is A");
@@ -117,18 +138,33 @@ public class ReservedWords {
         System.out.println("\n4. Object-Oriented Keywords:");
         
         // new keyword
+
+        // java.lang.String
+
+        // here java using the string constant pool
+        // Before creating a new object, Java checks the "Pool" (a special memory area in the Heap) to see if that string already exists.
+        // memory saving suppose if same object then java points to that...
+        // point to the exact same memory address. means same reference
+        // str1 == str2 always same as == check for memory value + reference
+        String str = "hwllo anything!";
+
+        // explicitly tells the java to bypass the java optmization ....
+        // here it is false as reference changes
         String str = new String("Created using new keyword");
         System.out.println(str);
         
         // instanceof keyword
+        // str which is String is always an instance of String ....
         if (str instanceof String) {
             System.out.println("str is an instance of String");
         }
         
         // this keyword (demonstrated in method)
+        // 
         obj.demonstrateThis();
         
         // 5. Exception Handling Keywords
+        // how exception is handled in java....
         System.out.println("\n5. Exception Handling Keywords:");
         
         try {
@@ -139,10 +175,33 @@ public class ReservedWords {
             // int error = 10 / 0;
             
         } catch (ArithmeticException e) {
+            // cathc the exception and show the message....
             System.out.println("Caught arithmetic exception: " + e.getMessage());
         } finally {
+            // runs after the try and catch always....
+            // either try runs or catch rns....
+            // sually for cleanup .... like db connections etc...
             System.out.println("Finally block always executes");
         }
+
+        // wen there is multiple catch block then se the specific one first then gerneral one
+        try{
+        }catch(ArrayIndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }finally {
+            System.out.println("Finally block always executes");
+        }
+
+        // as here str is null so that why it retirns false....
+        String str = null;
+        if (str instanceof String) {
+            // This block will NOT execute
+        }
+
+        // even if we have a return statemnt inside try or catch thn also finally block 
+        // will execute before the actuall method returns.
         
         // 6. Return keyword
         System.out.println("\n6. Return keyword:");
@@ -158,6 +217,8 @@ public class ReservedWords {
     
     // Method demonstrating 'this' keyword
     public void demonstrateThis() {
+        // here this is the local keyword - privateVar
+        // when we have tp access tje class variable then user - this.privateVar
         String privateVar = "Local variable"; // Same name as instance variable
         System.out.println("Local variable: " + privateVar);
         System.out.println("Instance variable using 'this': " + this.privateVar);
