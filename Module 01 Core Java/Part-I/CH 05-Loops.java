@@ -51,8 +51,10 @@ public class Loops {
         System.out.println("\n2. Enhanced for Loop (for-each):");
         
         // With arrays
+        // same as in cpp
         int[] numbers = {10, 20, 30, 40, 50};
         System.out.println("Array elements:");
+        // iterating to all tje elements .... 
         for (int num : numbers) {
             System.out.print(num + " ");
         }
@@ -125,6 +127,7 @@ public class Loops {
         // continue statement
         System.out.println("Using continue statement (skip even numbers):");
         for (int i = 1; i <= 10; i++) {
+            // i % 2 is the reaminder, here we checking if the number even then continue the iteration
             if (i % 2 == 0) {
                 continue; // Skip even numbers
             }
@@ -136,6 +139,14 @@ public class Loops {
         System.out.println("\n6. Nested Loops:");
         
         // Multiplication table
+        for(int i=0; i<2; i++){
+            for(int j=0; j<2; j++){
+                System.out.println("printing the 3*3 matrix.....");
+            }
+            System.out.println();
+        }
+
+        
         System.out.println("Multiplication table (3x3):");
         for (int i = 1; i <= 3; i++) {
             for (int j = 1; j <= 3; j++) {
@@ -154,6 +165,17 @@ public class Loops {
         }
         
         // 7. Infinite Loops (with break condition)
+        // infininte loop ...
+        // this loop will will rns the 12 time
+        // 0, 1, 2, 3 ........10, 11
+        Integer counter = 0;
+        while(true){
+            counter++;
+            if(counter > 10) break;
+            counter++;
+        }
+
+        
         System.out.println("\n7. Controlled Infinite Loop:");
         
         int counter = 0;
@@ -194,10 +216,12 @@ public class Loops {
         int originalNumber = number;
         
         System.out.println("Sum of digits in " + originalNumber + ":");
+        // pritning each digit ....
         while (number > 0) {
-            int digit = number % 10;
+            int digit = number % 10; // give s the last digit of the number
             sum += digit;
             System.out.println("Digit: " + digit + ", Running sum: " + sum);
+            // 1234 / 10 -> 120, new number will be 120
             number /= 10;
         }
         System.out.println("Total sum: " + sum);
