@@ -21,13 +21,28 @@ public class MainMethod {
         System.out.println("1. Standard Main Method Examples:");
         
         // Basic output
+        // Print then move to next line
+        // Hello, World!
+        // This is the main method
         System.out.println("Hello, World!");
         System.out.println("This is the main method");
         
         // 2. Using Command Line Arguments
+        // String[] args - command line arguments
+        // length of array of strings = args.length;
         System.out.println("\n2. Command Line Arguments:");
         System.out.println("Number of arguments: " + args.length);
-        
+
+        // if(args.length > 0){
+        //     System.out.println("first Argument: " + args[0]);
+        //     System.out.println("all arguments")
+        //     every line is comes under the new line.....
+        //     for(int i=0; i<args.length; i++){
+        //         System.out.println("argment" + " : " + args[i]);
+        //     }
+        // }else{
+        //     System.out.println("No command line argument!");
+        // }
         if (args.length > 0) {
             System.out.println("First argument: " + args[0]);
             
@@ -41,7 +56,14 @@ public class MainMethod {
         }
         
         // 3. Calling other methods from main
+        // if funcion belongs to static then directly Class_name.fnction_name
+        // otherwise we have to make the object then call it....
         System.out.println("\n3. Calling Other Methods:");
+        // greetUser is the static method - greetUser();
+        // displayInfo("java programming!")
+        // int result = addNumbers(10, 20)
+        // we are simply calling the same class function here we dont need to make
+        // any instance or static.....
         greetUser();
         displayInfo("Java Programming");
         int result = addNumbers(10, 20);
@@ -56,6 +78,7 @@ public class MainMethod {
     }
     
     // Helper method - static so it can be called from main without creating object
+    // we can call it using the - MainMethod.greetUser() 
     public static void greetUser() {
         System.out.println("Welcome to Java programming!");
     }
